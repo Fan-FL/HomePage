@@ -28,7 +28,7 @@ phases:
     # name: version
     commands:
       - echo Installing npm
-      - curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
       - apt-get install -y nodejs
       - echo Installing yarn
       - npm install -g yarn
