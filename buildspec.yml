@@ -27,23 +27,23 @@ phases:
     # name: version
     # name: version
     commands:
-      - echo Installing npm
+      - echo Installing npm...
       - curl -sL https://deb.nodesource.com/setup_12.x | bash -
       - apt-get install -y nodejs
-      - echo Installing yarn
+      - echo Installing yarn...
       - npm install -g yarn
       # - command
       # - command
   pre_build:
     commands:
-      - echo Installing dependancies
+      - echo Installing dependancies...
       - yarn
   # - command
   build:
     commands:
-      - echo Testing
-      - yarn test
-      - echo Building
+      - echo Testing...
+      # - yarn test
+      - echo Building...
       - yarn build
       # - command
       # - command
