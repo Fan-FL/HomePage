@@ -1,64 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './views/home';
-import './css/animate.css';
-import './css/et-lineicons.css';
-import './css/themify-icons.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './Routes';
+import NavigationMenu from './components/NavigationMenu';
+import './static/css/animate.css';
+import './static/css/et-lineicons.css';
+import './static/css/themify-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/main.css';
+import './static/css/main.css';
+import './static/css/main.scss';
 
-import './js/main.js';
+import './static/js/main.js';
 
 function App() {
     return (
-        <div id='home-page'>
-            <a href='#' className='js-nav-toggle nav-toggle'>
-                <i></i>
-            </a>
-
-            {/* Sidebar Section */}
-            <aside id='aside'>
-                {/* Logo */}
-                <h1 id='logo'>
-                    <img src='images/profile.jpg' alt='' />
-                    <br />
-                    <a href='index.html'>
-                        Lonon F. Smith<span>Web Designer</span>
-                    </a>
-                </h1>
-                {/* Menu */}
-                <nav id='main-menu'>
-                    <ul>
-                        <li>
-                            <a href='index.html'>Home</a>
-                        </li>
-                        <li>
-                            <a href='resume.html'>Resume</a>
-                        </li>
-                        <li className='active'>
-                            <a href='portfolio.html'>Portfolio</a>
-                        </li>
-                        <li>
-                            <a href='services.html'>Services</a>
-                        </li>
-                        <li>
-                            <a href='blog.html'>Blog</a>
-                        </li>
-                        <li>
-                            <a href='contact.html'>Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-            {/* Main Section */}
-            <div id='main'>
-                <Router>
-                    <Switch>
-                        <Route exact path='/' component={Home} />
-                    </Switch>
-                </Router>
+        <Router>
+            <div id='home-page'>
+                <NavigationMenu />
+                {/* Main Section */}
+                <div id='main'>
+                    <div className='container-fluid'>
+                        <div className='row'>
+                            <div className='col-lg-2'></div>
+                            <div className='col-md-12 col-lg-8'>
+                                <Routes />
+                            </div>
+                            <div className='col-lg-2'></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Router>
     );
 }
 

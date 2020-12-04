@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    overflow-y: scroll;
 }
 
 body {
@@ -183,12 +184,12 @@ select {
     border-radius: 5px;
 }
 
-table,
+/* table,
 th,
 tr,
 td {
     border: 1px solid #0556bf;
-}
+} */
 
 th,
 tr,
@@ -204,7 +205,7 @@ input[type='checkbox'] {
 /* Scrollbar  */
 
 ::-webkit-scrollbar {
-    width: 0px;
+    /* width: 0px; */
 }
 
 ::-webkit-scrollbar-track {
@@ -239,7 +240,7 @@ input[type='checkbox'] {
 #home-page {
     width: 88%;
     margin: 6%;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -249,8 +250,8 @@ input[type='checkbox'] {
     position: fixed;
     bottom: 30px;
     top: 30px;
-    /*    left: 0;*/
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    overflow: hidden;
     z-index: 1001;
     background-image: linear-gradient(
         to right top,
@@ -364,17 +365,75 @@ input[type='checkbox'] {
     color: #fff;
 }
 
-#aside #main-menu ul li.active a {
+#aside #main-menu ul li a.active {
     color: #fff;
 }
 
-#aside #main-menu ul li.active a:after {
+#aside #main-menu ul li a.active:after {
     visibility: visible;
     -webkit-transform: scaleX(1);
     -moz-transform: scaleX(1);
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
     transform: scaleX(1);
+}
+
+#aside .footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    color: #999;
+    padding: 60px 30px 30px 30px;
+}
+
+/* footer */
+
+.footer p {
+    margin-bottom: 0;
+    color: #82b4f5;
+}
+
+.footer a {
+    color: #82b4f5;
+}
+
+@media screen and (max-width: 768px) {
+    #aside .footer {
+        position: relative;
+        padding-top: 90px;
+    }
+}
+
+#aside .footer span {
+    display: block;
+}
+
+#aside .footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+#aside .footer ul li {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    list-style: none;
+}
+
+#aside .footer ul li a {
+    color: white;
+    padding: 2px;
+}
+
+#aside .footer ul li a:hover,
+#aside .footer ul li a:active,
+#aside .footer ul li a:focus {
+    text-decoration: none;
+    outline: none;
+    color: lightblue;
 }
 
 /*** 12. Navigation styles ***/
@@ -519,6 +578,7 @@ input[type='checkbox'] {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    background-color: white;
 }
 
 @media screen and (max-width: 1200px) {
@@ -550,29 +610,31 @@ input[type='checkbox'] {
     padding: 15px 30px !important;
 }
 
-body.offcanvas {
-    overflow-x: hidden;
-}
+@media screen and (max-width: 768px) {
+    body.offcanvas {
+        overflow-x: hidden;
+    }
 
-body.offcanvas #aside {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-    width: 270px;
-    z-index: 999;
-    position: fixed;
-}
+    body.offcanvas #aside {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        width: 270px;
+        z-index: 999;
+        position: fixed;
+    }
 
-body.offcanvas #main,
-body.offcanvas .nav-toggle {
-    top: 0;
-    -moz-transform: translateX(270px);
-    -webkit-transform: translateX(270px);
-    -ms-transform: translateX(270px);
-    -o-transform: translateX(270px);
-    transform: translateX(270px);
+    body.offcanvas #main,
+    body.offcanvas .nav-toggle {
+        top: 0;
+        -moz-transform: translateX(270px);
+        -webkit-transform: translateX(270px);
+        -ms-transform: translateX(270px);
+        -o-transform: translateX(270px);
+        transform: translateX(270px);
+    }
 }
 
 /*** 05. Section styles ***/
@@ -618,5 +680,254 @@ body.offcanvas .nav-toggle {
     .recent-projects {
         padding-top: 30px;
         padding-bottom: 60px;
+    }
+}
+
+/*** 06. Heading styles ***/
+
+.heading {
+    color: #0556bf;
+    font-family: 'Rambla', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1.5em;
+}
+
+.heading span {
+    display: block;
+}
+
+.about-heading {
+    color: #0556bf;
+    font-family: 'Rambla', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.8em;
+}
+
+.about-contact-wrap {
+    width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    margin: 10px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.post-heading {
+    color: #101010;
+    font-family: 'Rambla', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.8em;
+}
+
+.post-heading span {
+    display: block;
+}
+
+.heading-meta {
+    display: block;
+    font-family: 'Rambla', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.heading-meta.style-1 {
+    padding-left: 60px;
+}
+
+.heading-meta.style-1:after {
+    content: '';
+    height: 2px;
+    left: 15px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+    background-color: #0556bf;
+}
+
+@media screen and (max-width: 768px) {
+    .post-heading {
+        margin-bottom: 15px;
+        line-height: 1.2em;
+    }
+}
+
+/* 15. Timeline styles */
+
+.timeline-second-style .timeline-item {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.timeline-second-style .left-part {
+    width: 20%;
+    display: table-cell;
+    padding-right: 30px;
+    min-height: 100%;
+    text-align: right;
+    vertical-align: top;
+}
+
+.timeline-second-style .item-period {
+    margin: 3px 0;
+    font-size: 16px;
+    line-height: 1.2em;
+    font-family: 'Rambla', sans-serif;
+}
+
+.timeline-second-style .item-company {
+    display: block;
+    color: #999;
+    margin: 0 0 4px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.timeline-second-style .divider {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    bottom: 0;
+    width: 1px;
+    background-color: #eee;
+}
+
+.timeline-second-style .divider:after {
+    content: '';
+    display: block;
+    margin-top: 7px;
+    width: 11px;
+    height: 11px;
+    margin-left: -5px;
+    border-radius: 5px;
+    border: 2px solid #0556bf;
+    background-color: #fff;
+}
+
+.timeline-second-style .right-part {
+    width: 80%;
+    display: table-cell;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: top;
+}
+
+.timeline-second-style .item-title {
+    font-size: 16px;
+    margin-bottom: 3px;
+    font-family: 'Rambla', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-second-style .left-part {
+        width: 30%;
+        display: table-cell;
+        padding-right: 30px;
+        min-height: 100%;
+        text-align: right;
+        vertical-align: top;
+    }
+    .timeline-second-style .divider {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        bottom: 0;
+        width: 1px;
+        background-color: #eee;
+    }
+    .timeline-second-style .right-part {
+        width: 70%;
+        display: table-cell;
+        padding-left: 30px;
+        padding-right: 0px;
+        vertical-align: top;
+    }
+}
+
+.container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+/*** 13. Cardvisit styles ***/
+
+.cardvisit {
+    padding: 20px 30px;
+    margin-left: -100px;
+    width: 60%;
+    background-image: linear-gradient(
+        to right top,
+        #032481,
+        #053090,
+        #073da0,
+        #0749af,
+        #0556bf
+    );
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2),
+        0 13px 24px -11px rgba(5, 86, 191, 0.6);
+    margin-top: 45px;
+}
+
+.cardvisit h3 {
+    color: #fff;
+    font-family: 'Rambla', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+
+.cardvisit p {
+    color: #d6e5f8;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.cardvisit .divider-line {
+    height: 1px;
+    background: #326cb7;
+    width: 50%;
+    margin: 10px 0;
+}
+
+.cardvisit span {
+    font-weight: 400;
+    color: #d6e5f8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.divider1 {
+    height: 1px;
+    width: 100%;
+    background: #ececec;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .cardvisit {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cardvisit {
+        margin-left: 0;
+        width: 100%;
     }
 }
