@@ -10,8 +10,19 @@ import './static/css/main.css';
 import './static/css/main.scss';
 
 import './static/js/main.js';
+import config from './config/config';
+import Amplify from 'aws-amplify';
 
 function App() {
+    Amplify.configure({
+        Auth: {
+            ...config.cognito.Auth,
+        },
+        API: {
+            ...config.cognito.API,
+        },
+    });
+
     return (
         <Router>
             <div id='home-page'>

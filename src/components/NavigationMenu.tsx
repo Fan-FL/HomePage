@@ -43,6 +43,11 @@ const NavigationMenu = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink exact to='/test' activeClassName='active'>
+                                Test
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink
                                 exact
                                 to='/contact'
