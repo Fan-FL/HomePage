@@ -7,3 +7,15 @@
 .normal-list-style {
     list-style-type: initial;
 }
+
+#home-page {
+    #aside {
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #main {
+        width: calc(100% - 300px);
+    }
+}
